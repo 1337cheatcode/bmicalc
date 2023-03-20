@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <title>Tes BMI revou</title>
+    </head>
+    <body>
+        <nav></nav>
+        <main>
+            <!--Pake em bukan px-->
+            <div id="left-div">
+                <form id="" name="" class="bmi-calc-form">
+                    <div>
+                        <strong>Jenis Kelamin</strong><br>
+                        <input type="radio" name="sex" value="M" required="true">
+                        <label for="sex">Pria</label><br>
+                        <input type="radio" name="sex" value="F" required="true">
+                        <label for="sex">Wanita</label>
+                    </div>
+                    <div>
+                        <label for="weight">Berat</label><br>
+                        <input id="weight" type="text" name="weight" required="true" oninput="calcBMI()">
+                    </div>
+                    <div>
+                        <label for="age">Umur</label><br>
+                        <input type="password" name="age">
+                    </div>
+                    <div>
+                        <label for="height">Tinggi</label><br>
+                        <input id="height" type="text" name="height" required="true" oninput="calcBMI()">
+                    </div>
+                    <div>
+                        <button id="calc" onclick="calcBMI()">Calc BMI</button>
+                    </div>
+                </form>
+            </div>
+            <div id="right-div">
+                
+            </div>
+        </main>
+        <footer></footer>
+
+        <!--script src="js/index.js"-->
+        <script>
+            function calcBMI() {
+                let weight = document.getElementById("weight").value;
+                let height = document.getElementById("height").value;
+                if (weight && height) {
+                    BMI_value = parseFloat(weight)/(parseFloat(height)*parseFloat(height))*10000;
+                    document.getElementById("right-div").style.color = "black";
+                    if (BMI_value < 18.5) document.getElementById("right-div").style.backgroundColor = "yellow";
+                    else if (BMI_value <= 24.9) document.getElementById("right-div").style.backgroundColor = "green";
+                    else if (BMI_value <= 29.9) document.getElementById("right-div").style.backgroundColor = "red";
+                    else {
+                        document.getElementById("right-div").style.color = "white";
+                        document.getElementById("right-div").style.backgroundColor = "black";
+                    }
+                    document.getElementById("right-div").innerHTML = BMI_value;
+                }
+            }
+        </script>
+    </body>
+</html>
