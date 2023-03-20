@@ -10,3 +10,7 @@ main {
 main > div {
     width: 50vw;
 }
+
+div#right-div {
+    justify-content: center;
+}

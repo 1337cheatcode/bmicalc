@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
         <main>
             <!--Pake em bukan px-->
             <div id="left-div">
-                <form id="" name="" class="bmi-calc-form">
+                <form id="formcalc" name="form-calculator-bmi" class="bmi-calc-form">
                     <div>
                         <strong>Jenis Kelamin</strong><br>
                         <input type="radio" name="sex" value="M" required="true">
@@ -38,7 +38,8 @@
                 </form>
             </div>
             <div id="right-div">
-                
+                <h1 id="calc-result"><strong></strong></h1>
+                <h2 id="bmi-description"></h2>
             </div>
         </main>
         <footer></footer>
@@ -46,19 +47,41 @@
         <!--script src="js/index.js"-->
         <script>
             function calcBMI() {
+                function dynamicChangeDesc(description){
+                    result = document.getElementById("right-div");
+                    result_desc = document.getElementById("bmi-description").innerHTML;
+                    result.color = "black"
+                    switch (description.toLowerCase()) {
+                        case "kurus":
+                            result.backgroundColor = "yellow";
+                            result_desc = "Anda kurus";
+                            break;
+                        case "normal":
+                            result.backgroundColor = "lime";
+                            result_desc = "Anda normal";
+                            break;
+                        case "gemuk":
+                            result.backgroundColor = "red";
+                            result_desc = "Anda gemuk";
+                            break;
+                        case "obesitas":
+                            result.backgroundColor = "black";
+                            result.color = "white";
+                            result_desc = "<strong>ANDA OBESITAS</strong>";
+                            break;
+                        default:
+                            break;
+                    }
+                }
                 let weight = document.getElementById("weight").value;
                 let height = document.getElementById("height").value;
                 if (weight && height) {
                     BMI_value = parseFloat(weight)/(parseFloat(height)*parseFloat(height))*10000;
-                    document.getElementById("right-div").style.color = "black";
-                    if (BMI_value < 18.5) document.getElementById("right-div").style.backgroundColor = "yellow";
-                    else if (BMI_value <= 24.9) document.getElementById("right-div").style.backgroundColor = "green";
-                    else if (BMI_value <= 29.9) document.getElementById("right-div").style.backgroundColor = "red";
-                    else {
-                        document.getElementById("right-div").style.color = "white";
-                        document.getElementById("right-div").style.backgroundColor = "black";
-                    }
-                    document.getElementById("right-div").innerHTML = BMI_value;
+                    if (BMI_value < 18.5) dynamicChangeDesc("kurus");
+                    else if (BMI_value <= 24.9) dynamicChangeDesc("normal");
+                    else if (BMI_value <= 29.9) dynamicChangeDesc("gemuk");
+                    else dynamicChangeDesc("obesitas");
+                    document.getElementById("calc-result").firstElementChild.innerHTML = BMI_value;
                 }
             }
         </script>
