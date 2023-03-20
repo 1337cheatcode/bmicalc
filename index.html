@@ -48,26 +48,24 @@
         <script>
             function calcBMI() {
                 function dynamicChangeDesc(description){
-                    result = document.getElementById("right-div");
-                    result_desc = document.getElementById("bmi-description").innerHTML;
-                    result.color = "black"
+                    document.getElementById("right-div").style.color = "black"
                     switch (description.toLowerCase()) {
                         case "kurus":
-                            result.backgroundColor = "yellow";
-                            result_desc = "Anda kurus";
+                            document.getElementById("right-div").style.backgroundColor = "yellow";
+                            document.getElementById("bmi-description").innerHTML = "Anda kurus";
                             break;
                         case "normal":
-                            result.backgroundColor = "lime";
-                            result_desc = "Anda normal";
+                            document.getElementById("right-div").style.backgroundColor = "lime";
+                            document.getElementById("bmi-description").innerHTML = "Anda normal";
                             break;
                         case "gemuk":
-                            result.backgroundColor = "red";
-                            result_desc = "Anda gemuk";
+                            document.getElementById("right-div").style.backgroundColor = "red";
+                            document.getElementById("bmi-description").innerHTML = "Anda gemuk";
                             break;
                         case "obesitas":
-                            result.backgroundColor = "black";
-                            result.color = "white";
-                            result_desc = "<strong>ANDA OBESITAS</strong>";
+                            document.getElementById("right-div").style.backgroundColor = "black";
+                            document.getElementById("right-div").style.color = "white";
+                            document.getElementById("bmi-description").innerHTML = "<strong>ANDA OBESITAS</strong>";
                             break;
                         default:
                             break;
