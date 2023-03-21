@@ -39,7 +39,7 @@
             </div>
             <div id="right-div">
                 <h1 id="calc-result"><strong></strong></h1>
-                <h2 id="bmi-description"></h2>
+                <h1 id="bmi-description"></h1>
             </div>
         </main>
         <footer></footer>
@@ -79,7 +79,7 @@
                     else if (BMI_value <= 24.9) dynamicChangeDesc("normal");
                     else if (BMI_value <= 29.9) dynamicChangeDesc("gemuk");
                     else dynamicChangeDesc("obesitas");
-                    document.getElementById("calc-result").firstElementChild.innerHTML = BMI_value;
+                    document.getElementById("calc-result").innerHTML = `<strong>${BMI_value}</strong>`;
                 }
             }
         </script>
