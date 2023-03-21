@@ -7,8 +7,16 @@ main {
     display: flex;
 }
 
-main > div {
-    width: 50vw;
+main > div#left-div {
+    width: 35vw;
+}
+
+form.bmi-calc-form#formcalc {
+    background-color: lightgrey;
+}
+
+main > div#right-div {
+    width: 65vw;
 }
 
 div#right-div {
