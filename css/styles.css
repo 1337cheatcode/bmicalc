@@ -1,24 +1,67 @@
-div {
-  border: 1px solid black;
-  padding: 10px 20px;
+body {
+  background-size: 100vw;
+  background-position-y: 100vh;
 }
 
 main {
   display: flex;
 }
 
-main > div#left-div {
+main > section#left-section {
   width: 35vw;
+  justify-content: center;
 }
 
-form.bmi-calc-form#formcalc {
-  background-color: lightgrey;
-}
-
-main > div#right-div {
+main > section#right-section {
   width: 65vw;
 }
 
-div#right-div {
+section#left-section > form {
+  width: 75%;
+  margin: 0 12.5%;
+}
+
+section#left-section div {
+  padding: 0.5em;
+}
+
+section#right-section {
   justify-content: center;
+  padding: 0 1em;
+}
+
+form.bmi-calc-form#formcalc > div{
+  background-color: lightgrey;
+  color: black;
+}
+
+form.bmi-calc-form#formcalc > div[class]{
+  border: 2px grey;
+  border-style: ridge none ridge;
+}
+
+form.bmi-calc-form#formcalc > div[class]:first-child{
+  border-top: 0 none;
+  border-radius: 1em 1em 0 0;
+}
+
+form.bmi-calc-form#formcalc > div[class]:last-child{
+  border-bottom: 0 none;
+  border-radius: 0 0 1em 1em;
+}
+
+input[type="text"], input[type="password"] {
+  width: 35%;
+}
+
+footer {
+  background-color: lightcyan;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 0.5vw ;
+  width: 99.5vw;
+  border-top: 2px ridge grey; 
 }

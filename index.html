@@ -5,46 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="preload" href="/assets/no_result_bg.jpg" as="image">
+    <link rel="preload" href="/assets/uw_bg.jpg" as="image">
+    <link rel="preload" href="/assets/healthy_bg.jpg" as="image">
+    <link rel="preload" href="/assets/ow_bg.jpg" as="image">
+    <link rel="preload" href="/assets/obese_bg.jpg" as="image">
     <title>Tes BMI revou</title>
   </head>
   <body>
     <nav></nav>
     <main>
       <!--Pake em bukan px-->
-      <div id="left-div">
+      <section id="left-section">
+        <h1 id="judul">Kalkulator BMI</h1>
+        <p id="bmi-wiki">Indeks massa tubuh (IMT) adalah metode yang digunakan untuk menentukan status gizi seseorang. Pada usia remaja, penentuan ini didasarkan pada perhitungan IMT yang kemudian dicocokkan dengan gafik pertumbuhan sesuai usia dan jenis kelamin. Standar normal ideal yang digunakan untuk orang dewasa berusia di atas 20 tahun adalah IMT antara 20 hingga 25,0. Seseorang dikatakan memiliki berat badan berlebih jika IMT antara 25,0 hingga 29,9. Jika IMT < 20 berarti berat badan kurang dan IMT ≥30 berarti obesitas.</p>
         <form id="formcalc" name="form-calculator-bmi" class="bmi-calc-form">
           <div class="sex-form">
-            <strong>Jenis Kelamin</strong><br>
+            <label><strong>Jenis Kelamin</strong></label><br>
             <input class="sex-form" type="radio" name="sex" value="M" required="true">
             <label for="sex">Pria</label><br>
             <input class="sex-form" type="radio" name="sex" value="F" required="true">
             <label for="sex">Wanita</label>
           </div>
-          <hr>
           <div class="weight-form">
             <label for="weight"><strong>Berat</strong></label><br>
-            <input class="weight-form" id="weight" type="text" name="weight" required oninput="calcBMI()">
+            <input class="weight-form" id="weight" type="text" name="weight" required oninput="calcBMI()" onkeypress="return isNumber(event)">
           </div>
-          <hr>
           <div class="age-form">
             <label for="age"><strong>Umur</strong></label><br>
-            <input class="age-form" type="password" name="age" pattern="(^[2-9][0-9]$)|(^[1-9][0-9]{2,}$)" oninvalid="setCustomValidity('Umur cuman untuk 20 tahun keatas')" onvalid="setCustomValidity('')">
+            <input class="age-form" type="password" name="age" pattern="(^[2-9][0-9]$)|(^[1-9][0-9]{2,}$)" oninvalid="setCustomValidity('Umur cuman untuk 20 tahun keatas')" onvalid="setCustomValidity('')" onkeypress="return isNumber(event)">
           </div>
           <div class="height-form">
             <label for="height"><strong>Tinggi</strong></label><br>
-            <input class="height-form" id="height" type="text" name="height" required oninput="calcBMI()">
+            <input class="height-form" id="height" type="text" name="height" required oninput="calcBMI()" onkeypress="return isNumber(event)">
           </div>
           <div class="calc-form">
             <input class="calc-form" type="button" id="calc" value="Calc BMI" onclick="calcBMI()">
           </div>
         </form>
-      </div>
-      <div id="right-div">
+      </section>
+      <section id="right-section">
         <h1 id="calc-result"></h1>
-        <h1 id="bmi-description"></h1>
-      </div>
+        <h1 id="bmi-result"></h1>
+        <p id="bmi-explanation"></p>
+      </section>
     </main>
-    <footer></footer>
+    <footer id="footer">
+      <a href="https://www.freepik.com/free-vector/black-background-with-focus-spot-light_10016491.htm#query=dark%20background&position=5&from_view=keyword&track=ais">Image by starline</a> on Freepik
+      <a href="https://www.freepik.com/free-vector/yellow-background-with-grunge-black-diagonal-stripes_8038895.htm#query=yellow%20warning%20background&position=4&from_view=search&track=ais">Image by starline</a> on Freepik
+      <a href="https://www.freepik.com/free-vector/city-park-scene-background_4428237.htm#query=nature%20park%20background&position=2&from_view=search&track=ais">Image by brgfx</a> on Freepik
+      Image by <a href="https://www.freepik.com/free-vector/flat-design-red-comic-style-background_11685287.htm#query=red%20warning%20background&position=43&from_view=search&track=ais">Freepik</a>
+      Image by <a href="https://www.freepik.com/free-photo/abstract-smoke-isolated-black-backdrop_4225817.htm#query=dark%20death%20background&position=3&from_view=search&track=ais">Freepik</a>
+    </footer>
     <script src="js/index.js"></script>
   </body>
 </html>
