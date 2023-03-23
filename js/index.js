@@ -36,26 +36,32 @@ function calcBMI() {
       case "kurus":
         document.getElementsByTagName("body")[0].style.backgroundImage = "url(/assets/uw_bg.jpg)";
         result_desc.innerHTML = "Anda kurus";
+        result_xplain.innerHTML = "Sesuaikan pola makan dan pola tidur";
+        footer.innerHTML = '<a href="https://www.freepik.com/free-vector/yellow-background-with-grunge-black-diagonal-stripes_8038895.htm#query=yellow%20warning%20background&position=4&from_view=search&track=ais">Image by starline</a> on Freepik';
         break;
       case "normal":
         document.getElementsByTagName("body")[0].style.backgroundImage = "url(/assets/healthy_bg.jpg)";
         result_desc.innerHTML = "Anda normal";
-
+        result_xplain.innerHTML = "Pertahankan pola sehatmu";
+        footer.innerHTML = '<a href="https://www.freepik.com/free-vector/city-park-scene-background_4428237.htm#query=nature%20park%20background&position=2&from_view=search&track=ais">Image by brgfx</a> on Freepik';
         break;
       case "gemuk":
         document.getElementsByTagName("body")[0].style.backgroundImage = "url(/assets/ow_bg.jpg)";
         result_desc.innerHTML = "Anda gemuk";
+        result_xplain.innerHTML = "Kurangi makan banyak dan jangan banyak tidur";
+        footer.innerHTML = 'Image by <a href="https://www.freepik.com/free-vector/flat-design-red-comic-style-background_11685287.htm#query=red%20warning%20background&position=43&from_view=search&track=ais">Freepik</a>';
         break;
       case "obesitas":
         document.getElementsByTagName("body")[0].style.backgroundImage = "url(/assets/obese_bg.jpg)";
         changeColor("white");
         result_desc.innerHTML = makeItStrongOnHTML("ANDA OBESITAS!!!");
+        result_xplain.innerHTML = "Rajinlah berolahraga dan mulailah pola makan dan pola tidur yang lebih sehat";
+        footer.innerHTML = 'Image by <a href="https://www.freepik.com/free-photo/abstract-smoke-isolated-black-backdrop_4225817.htm#query=dark%20death%20background&position=3&from_view=search&track=ais">Freepik</a>';
         break;
       default:
         break;
       
     }
-    
   }
   let weight = document.getElementById("weight").value;
   let height = document.getElementById("height").value;
@@ -68,10 +74,12 @@ function calcBMI() {
     else dynamicChangeDesc("obesitas");
     document.getElementById("calc-result").innerHTML = makeItStrongOnHTML(BMI_value);
   } else {
+    //jika berat dan tinggi tidak terisi maka kembali ke semula
     setTimeout(() => { document.getElementsByTagName("body")[0].style.transition = "unset"; }, 500);
     document.getElementsByTagName("body")[0].style.transition = "background 0.5s linear";
     document.getElementsByTagName("body")[0].style.backgroundImage = "url(/assets/no_result_bg.jpg)";
     changeColor("white");
+    footer.innerHTML = '<a href="https://www.freepik.com/free-vector/black-background-with-focus-spot-light_10016491.htm#query=dark%20background&position=5&from_view=keyword&track=ais">Image by starline</a> on Freepik';
   }
 }
 
