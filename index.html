@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/styles.css" />
-        <title>Tes BMI revou</title>
-    </head>
-    <body>
-        <nav></nav>
-        <main>
-            <!--Pake em bukan px-->
-            <div id="left-div">
-                <form id="formcalc" name="form-calculator-bmi" class="bmi-calc-form">
-                    <div class="sex-form">
-                        <strong>Jenis Kelamin</strong><br>
-                        <input class="sex-form" type="radio" name="sex" value="M" required="true">
-                        <label for="sex">Pria</label><br>
-                        <input class="sex-form" type="radio" name="sex" value="F" required="true">
-                        <label for="sex">Wanita</label>
-                    </div>
-                    <div class="weight-form">
-                        <label for="weight"><strong>Berat</strong></label><br>
-                        <input class="weight-form" id="weight" type="text" name="weight" required oninput="calcBMI()">
-                    </div>
-                    <div class="age-form">
-                        <label for="age"><strong>Umur</strong></label><br>
-                        <input class="age-form" type="password" name="age" pattern="(^(^[2-9][0-9]$)|(^[1-9][0-9]{2,}$)" oninvalid="setCustomValidity('Umur cuman untuk 20 tahun keatas')" onvalid="setCustomValidity('')">
-                    </div>
-                    <div class="height-form">
-                        <label for="height"><strong>Tinggi</strong></label><br>
-                        <input class="height-form" id="height" type="text" name="height" required oninput="calcBMI()">
-                    </div>
-                    <div class="calc-form">
-                        <input class="calc-form" type="button" id="calc" value="Calc BMI" onclick="calcBMI()">
-                    </div>
-                </form>
-            </div>
-            <div id="right-div">
-                <h1 id="calc-result"></h1>
-                <h1 id="bmi-description"></h1>
-            </div>
-        </main>
-        <footer></footer>
-        <script src="js/index.js"></script>
-    </body>
+  <head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <title>Tes BMI revou</title>
+  </head>
+  <body>
+    <nav></nav>
+    <main>
+      <!--Pake em bukan px-->
+      <div id="left-div">
+        <form id="formcalc" name="form-calculator-bmi" class="bmi-calc-form">
+          <div class="sex-form">
+            <strong>Jenis Kelamin</strong><br>
+            <input class="sex-form" type="radio" name="sex" value="M" required="true">
+            <label for="sex">Pria</label><br>
+            <input class="sex-form" type="radio" name="sex" value="F" required="true">
+            <label for="sex">Wanita</label>
+          </div>
+          <div class="weight-form">
+            <label for="weight"><strong>Berat</strong></label><br>
+            <input class="weight-form" id="weight" type="text" name="weight" required oninput="calcBMI()">
+          </div>
+          <div class="age-form">
+            <label for="age"><strong>Umur</strong></label><br>
+            <input class="age-form" type="password" name="age" pattern="(^(^[2-9][0-9]$)|(^[1-9][0-9]{2,}$)" oninvalid="setCustomValidity('Umur cuman untuk 20 tahun keatas')" onvalid="setCustomValidity('')">
+          </div>
+          <div class="height-form">
+            <label for="height"><strong>Tinggi</strong></label><br>
+            <input class="height-form" id="height" type="text" name="height" required oninput="calcBMI()">
+          </div>
+          <div class="calc-form">
+            <input class="calc-form" type="button" id="calc" value="Calc BMI" onclick="calcBMI()">
+          </div>
+        </form>
+      </div>
+      <div id="right-div">
+        <h1 id="calc-result"></h1>
+        <h1 id="bmi-description"></h1>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="js/index.js"></script>
+  </body>
 </html>
