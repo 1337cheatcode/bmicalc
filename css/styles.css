@@ -15,18 +15,10 @@ form.bmi-calc-form#formcalc {
     background-color: lightgrey;
 }
 
-form.bmi-calc-form#formcalc > *:hover {
-    background-color: grey;
-}
-
 main > div#right-div {
     width: 65vw;
 }
 
 div#right-div {
     justify-content: center;
-}
-
-label[for="age"]+input{
-
 }

@@ -13,27 +13,27 @@
             <!--Pake em bukan px-->
             <div id="left-div">
                 <form id="formcalc" name="form-calculator-bmi" class="bmi-calc-form">
-                    <div>
+                    <div class="sex-form">
                         <strong>Jenis Kelamin</strong><br>
-                        <input type="radio" name="sex" value="M" required="true">
+                        <input class="sex-form" type="radio" name="sex" value="M" required="true">
                         <label for="sex">Pria</label><br>
-                        <input type="radio" name="sex" value="F" required="true">
+                        <input class="sex-form" type="radio" name="sex" value="F" required="true">
                         <label for="sex">Wanita</label>
                     </div>
-                    <div>
-                        <label for="weight">Berat</label><br>
-                        <input id="weight" type="text" name="weight" required="true" oninput="calcBMI()">
+                    <div class="weight-form">
+                        <label for="weight"><strong>Berat</strong></label><br>
+                        <input class="weight-form" id="weight" type="text" name="weight" required oninput="calcBMI()">
                     </div>
-                    <div>
-                        <label for="age">Umur</label><br>
-                        <input type="password" name="age">
+                    <div class="age-form">
+                        <label for="age"><strong>Umur</strong></label><br>
+                        <input class="age-form" type="password" name="age" pattern="(^(^[2-9][0-9]$)|(^[1-9][0-9]{2,}$)" oninvalid="setCustomValidity('Umur cuman untuk 20 tahun keatas')" onvalid="setCustomValidity('')">
                     </div>
-                    <div>
-                        <label for="height">Tinggi</label><br>
-                        <input id="height" type="text" name="height" required="true" oninput="calcBMI()">
+                    <div class="height-form">
+                        <label for="height"><strong>Tinggi</strong></label><br>
+                        <input class="height-form" id="height" type="text" name="height" required oninput="calcBMI()">
                     </div>
-                    <div>
-                        <button id="calc" onclick="calcBMI()">Calc BMI</button>
+                    <div class="calc-form">
+                        <input class="calc-form" type="button" id="calc" value="Calc BMI" onclick="calcBMI()">
                     </div>
                 </form>
             </div>
